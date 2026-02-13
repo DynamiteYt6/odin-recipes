@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>For Praise 💫</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#8b5cf6',
+            pastelPink: '#fff5f7',
+            softLavender: '#f3f0ff',
+            deepPurple: '#6d28d9',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          borderRadius: {
+            'custom': '12px',
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 1.2s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'sparkle': 'sparkle 3s linear infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            sparkle: {
+              '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+              '50%': { opacity: '1', transform: 'scale(1.2)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layouts">
+    body {
+      background: linear-gradient(135deg, #fff5f7 0%, #f3f0ff 100%);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    .reveal {
+      opacity: 0;
+      transition: all 1s ease-out;
+      transform: translateY(30px);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sparkle-particle {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 10px rgba(255,255,255,0.8);
+    }
+    /* Rounded Twelve Style */
+    .rounded-theme {
+      border-radius: 12px;
+    }
+    /* Glassmorphism Effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .handwritten {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #8b5cf6;
+    }
+  </style>
+</head>
+<body class="font-sans text-slate-700 selection:bg-brand/20">
+<!-- BEGIN: Sparkle Background Container -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" data-purpose="background-animation" id="sparkle-container"></div>
+<!-- END: Sparkle Background Container -->
+
+<!-- BEGIN: Music Control -->
+<div class="fixed top-6 right-6 z-50" data-purpose="audio-control">
+<button class="flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur shadow-sm border border-slate-100 rounded-full text-sm font-medium hover:bg-white transition-all" id="musicToggle">
+<span id="musicStatus">Play something gentle 🎶</span>
+<svg class="h-4 w-4 text-brand" fill="none" id="audioIcon" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Hidden Audio -->
+<audio id="bgMusic" loop="" autoplay>
+<source src="Olivia Dean - A Couple Minutes (Lyric Video).mp4" type="audio/mpeg"/>
+</audio>
+</div>
+<!-- END: Music Control -->
+
+<main class="relative z-10 w-full max-w-lg mx-auto px-6">
+
+<!-- BEGIN: Hero Section -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center space-y-6 pt-20" data-purpose="opening-hero">
+<div class="animate-fade-in-up">
+<h1 class="text-4xl font-bold text-slate-800 tracking-tight leading-tight">
+  Hey Praise. <span class="text-brand">I need to tell you something.</span>
+</h1>
+<p class="mt-4 text-lg text-slate-500 font-medium">I've been thinking about this for a while.</p>
+</div>
+<div class="mt-12 animate-bounce opacity-40">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</section>
+<!-- END: Hero Section -->
+
+<!-- BEGIN: The Confession -->
+<section class="py-24 space-y-32" data-purpose="scroll-storytelling">
+<div class="reveal text-center">
+<h2 class="text-2xl font-semibold text-slate-700">
+  You know those moments when someone just... <span class="handwritten">gets you</span>?
+</h2>
+</div>
+<div class="reveal text-center">
+<h2 class="text-2xl font-semibold text-slate-700">
+  Not in a <span class="text-slate-500">"yeah we have things in common"</span> way.
+</h2>
+</div>
+<div class="reveal text-center">
+<h2 class="text-2xl font-semibold text-slate-700">
+  But in a <span class="handwritten">"how did you know I needed to hear that?"</span> kind of way.
+</h2>
+</div>
+<div class="reveal text-center">
+<h2 class="text-2xl font-bold text-brand italic">
+  That's how I feel when I'm around you.
+</h2>
+</div>
+</section>
+<!-- END: The Confession -->
+
+<!-- BEGIN: Things I Notice -->
+<section class="py-24 space-y-12" data-purpose="affirmation-sequence">
+<div class="text-center mb-8">
+<h3 class="text-slate-500 uppercase tracking-widest text-xs font-bold">Things I notice about you</h3>
+<p class="text-slate-600 italic mt-2">That you might not even realize...</p>
+</div>
+
+<div class="grid gap-6">
+<div class="reveal glass-card p-6 rounded-theme shadow-sm border-l-4 border-brand">
+<p class="text-lg font-medium">The way you get genuinely excited about things.</p>
+<p class="text-sm text-slate-600 mt-2">Not fake excited. Real, infectious, <span class="handwritten">"I want to care about this because you care"</span> excited.</p>
+</div>
+<div class="reveal glass-card p-6 rounded-theme shadow-sm border-l-4 border-brand">
+<p class="text-lg font-medium">How you remember small things I mention in passing.</p>
+<p class="text-sm text-slate-600 mt-2">Like you're actually listening, not just waiting for your turn to talk.</p>
+</div>
+<div class="reveal glass-card p-6 rounded-theme shadow-sm border-l-4 border-brand">
+<p class="text-lg font-medium">That little smile you do when you're trying not to smile.</p>
+<p class="text-sm text-slate-600 mt-2">I notice it every single time.</p>
+</div>
+<div class="reveal glass-card p-6 rounded-theme shadow-sm border-l-4 border-brand">
+<p class="text-lg font-medium italic">How you make people feel seen.</p>
+<p class="text-sm text-slate-600 mt-2">It's rare. And it's one of the most attractive things about you.</p>
+</div>
+</div>
+</section>
+<!-- END: Things I Notice -->
+
+<!-- BEGIN: Moments I Replay -->
+<section class="py-32 space-y-16" data-purpose="memory-sequence">
+<div class="reveal text-center">
+<h2 class="text-3xl font-bold text-slate-800 mb-2">Moments I replay in my head</h2>
+<p class="text-slate-500 italic">The ones I keep coming back to...</p>
+</div>
+
+<div class="reveal glass-card p-8 rounded-theme shadow-xl">
+<p class="text-sm font-bold text-brand mb-2 uppercase tracking-wider">That random Tuesday</p>
+<p class="text-lg text-slate-700 leading-relaxed">
+  When we stayed up way too late talking about everything and nothing. I remember thinking <span class="handwritten">"I could do this every night."</span>
+</p>
+</div>
+
+<div class="reveal glass-card p-8 rounded-theme shadow-xl">
+<p class="text-sm font-bold text-brand mb-2 uppercase tracking-wider">The way you laughed</p>
+<p class="text-lg text-slate-700 leading-relaxed">
+  At something I said that wasn't even that funny. But your laugh made me want to be funnier, better, more... <span class="font-semibold">everything</span>.
+</p>
+</div>
+
+<div class="reveal glass-card p-8 rounded-theme shadow-xl">
+<p class="text-sm font-bold text-brand mb-2 uppercase tracking-wider">When you looked at me</p>
+<p class="text-lg text-slate-700 leading-relaxed">
+  Like you actually saw me. Not the version I show everyone else. The real me. <span class="handwritten">And you didn't look away.</span>
+</p>
+</div>
+</section>
+<!-- END: Moments I Replay -->
+
+<!-- BEGIN: The Core Truth -->
+<section class="py-32 space-y-24" data-purpose="core-message">
+<div class="reveal text-center">
+<h2 class="text-2xl font-semibold text-slate-700">
+  I could list a hundred things I like about you.
+</h2>
+</div>
+<div class="reveal text-center">
+<h2 class="text-2xl font-semibold text-slate-700">
+  Your smile, your laugh, the way you light up talking about things you love.
+</h2>
+</div>
+<div class="reveal text-center">
+<h2 class="text-2xl font-semibold text-slate-700">
+  But honestly? It's simpler than that.
+</h2>
+</div>
+<div class="reveal text-center">
+<h2 class="text-3xl font-bold text-brand italic leading-relaxed">
+  You make me want to be the person who gets to make you smile.
+</h2>
+<p class="text-xl text-slate-600 mt-4">Every. Single. Day.</p>
+</div>
+</section>
+<!-- END: The Core Truth -->
+
+<!-- BEGIN: The Question -->
+<section class="py-32 text-center" data-purpose="valentine-question">
+<div class="reveal bg-brand text-white p-8 rounded-theme shadow-xl relative overflow-hidden">
+<div class="relative z-10">
+<svg class="h-10 w-10 mx-auto mb-6 opacity-80" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+<h2 class="text-3xl font-bold mb-6">Praise,<br/>will you be my Valentine?</h2>
+<p class="text-xl leading-relaxed font-light mb-8">
+  Not because it's cute or traditional.<br/>
+  But because I genuinely can't think of anyone else I'd rather spend it with.
+</p>
+
+<!-- Interactive Buttons -->
+<div class="space-y-4 max-w-md mx-auto mt-8">
+  <button onclick="handleYes()" class="w-full py-4 px-8 bg-white text-brand rounded-full font-bold text-lg shadow-xl hover:scale-105 active:scale-95 transition-all">
+    Yes, I'd really like that 💕
+  </button>
+  <button onclick="handleMaybe()" id="maybeBtn" class="w-full py-4 px-8 bg-white/20 border-2 border-white text-white rounded-full font-semibold hover:bg-white/30 transition-all">
+    This is really sweet...
+  </button>
+</div>
+
+<p class="mt-8 text-sm text-white/70 italic">No pressure. Just honesty.</p>
+</div>
+<!-- Decorative Circle in Background -->
+<div class="absolute -bottom-12 -right-12 w-32 h-32 bg-white/10 rounded-full"></div>
+</div>
+</section>
+<!-- END: The Question -->
+
+<!-- BEGIN: Yes Response (Hidden Initially) -->
+<section class="min-h-screen hidden flex-col justify-center items-center text-center space-y-12 pb-32" data-purpose="success-response" id="successSection">
+<div class="reveal space-y-4">
+<h2 class="text-5xl font-bold text-brand">🥰</h2>
+<h2 class="text-3xl font-bold text-slate-800">You just made my entire week.</h2>
+<p class="text-slate-600 font-medium italic max-w-md">
+  Okay, I'm trying to play it cool right now but I'm actually grinning like an idiot.
+</p>
+</div>
+
+<div class="reveal glass-card p-8 rounded-theme shadow-xl max-w-lg">
+<p class="text-lg text-slate-700 leading-relaxed mb-4">
+  I promise to make this Valentine's Day special. Not in a grand gesture kind of way, but in a <span class="handwritten">"I actually pay attention to what makes you happy"</span> kind of way.
+</p>
+<p class="text-2xl font-bold text-brand mt-6">I can't wait, Praise.</p>
+</div>
+
+<div class="reveal glass-card p-6 rounded-theme max-w-md border border-brand/20">
+<p class="text-slate-600 mb-2 text-sm font-bold">P.S.</p>
+<p class="text-slate-700 italic">If you screenshot this to show your friends, I won't judge. I'm pretty proud of it too. 😊</p>
+</div>
+</section>
+<!-- END: Yes Response -->
+
+<!-- BEGIN: Final Note -->
+<section class="py-24" data-purpose="personal-note">
+<div class="reveal text-center space-y-6">
+<div class="h-px w-12 bg-slate-300 mx-auto mb-8"></div>
+<p class="text-xs text-slate-400 font-semibold tracking-wider uppercase">Made with care</p>
+</div>
+</section>
+<!-- END: Final Note -->
+
+</main>
+
+<!-- BEGIN: Scripts -->
+<script data-purpose="scroll-reveal">
+    /**
+     * Observer for fade-in animations on scroll
+     */
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+<script data-purpose="canvas-particles">
+    /**
+     * Create decorative floating particles
+     */
+    const container = document.getElementById('sparkle-container');
+    const particleCount = 20;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'sparkle-particle';
+      
+      const size = Math.random() * 4 + 2;
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      const delay = Math.random() * 5;
+      const duration = Math.random() * 3 + 2;
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${left}%`;
+      particle.style.top = `${top}%`;
+      particle.style.animation = `sparkle ${duration}s ease-in-out ${delay}s infinite`;
+      particle.style.opacity = Math.random() * 0.5 + 0.1;
+
+      container.appendChild(particle);
+    }
+  </script>
+
+<script data-purpose="audio-handling">
+    /**
+     * Basic audio toggle functionality
+     */
+    const musicBtn = document.getElementById('musicToggle');
+    const audio = document.getElementById('bgMusic');
+    const statusText = document.getElementById('musicStatus');
+    const icon = document.getElementById('audioIcon');
+
+    let isPlaying = false;
+
+    musicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        statusText.innerText = 'Play something gentle 🎶';
+        icon.classList.remove('text-brand');
+        icon.classList.add('text-slate-400');
+      } else {
+        audio.play().catch(e => console.log("Autoplay blocked or link broken"));
+        statusText.innerText = 'Now playing... ✨';
+        icon.classList.add('text-brand');
+        icon.classList.remove('text-slate-400');
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+
+<script data-purpose="interactivity">
+    // Handle "maybe" button
+    let maybeCount = 0;
+    function handleMaybe() {
+      const btn = document.getElementById('maybeBtn');
+      maybeCount++;
+
+      const responses = [
+        "You can take your time, you know 💭",
+        "Still here whenever you're ready 🌸",
+        "The 'Yes' button is right there btw 😊"
+      ];
+
+      if (maybeCount <= 3) {
+        btn.textContent = responses[maybeCount - 1];
+      }
+    }
+
+    // Handle yes
+    function handleYes() {
+      createConfetti();
+      setTimeout(() => {
+        const successSection = document.getElementById('successSection');
+        successSection.classList.remove('hidden');
+        successSection.classList.add('flex');
+        successSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1500);
+    }
+
+    // Confetti
+    function createConfetti() {
+      const sparkleContainer = document.getElementById('sparkle-container');
+      const colors = ['#8b5cf6', '#a78bfa', '#ffc2d1', '#ffd700', '#ff69b4'];
+
+      for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.style.position = 'absolute';
+          confetti.style.left = '50%';
+          confetti.style.top = '50%';
+          confetti.style.width = '10px';
+          confetti.style.height = '10px';
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.borderRadius = '50%';
+          confetti.style.transform = `translate(${(Math.random() - 0.5) * 800}px, ${(Math.random() - 0.5) * 800}px) rotate(${Math.random() * 720}deg)`;
+          confetti.style.transition = 'all 2s ease-out';
+          confetti.style.opacity = '0';
+          sparkleContainer.appendChild(confetti);
+
+          setTimeout(() => confetti.remove(), 2000);
+        }, i * 20);
+      }
+    }
+  </script>
+<!-- END: Scripts -->
+
+</body>
+</html>
